@@ -1,0 +1,6 @@
+plugin.tx_rtpclearcacherequest_pi1 = USER_INT
+plugin.tx_rtpclearcacherequest_pi1 {
+	includeLibs = EXT:rtp_clearcacherequest/pi1/class.tx_rtpclearcacherequest_pi1.php
+	userFunc = tx_rtpclearcacherequest_pi1->clearCacheRequest
+}
+page.1291 = < plugin.tx_rtpclearcacherequest_pi1

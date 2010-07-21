@@ -1,0 +1,20 @@
+
+  #cat=basic/enable/100; type=string; label = Allowed Remote IPs: Defines which IP addresses are allowed to request a clear cache command via HTTP. comma-list of IP-addresses to match with. *-wildcard allowed instead of number, plus leaving out parts in the IP number is accepted as wildcard (eg. 192.168.*.* equals 192.168). If list is "*" no check is done and the function returns TRUE immediately. An empty list always returns FALSE (See t3lib_div::cmpIP!).
+enabledIps = 127.0.0.1,::1
+
+  # cat=basic/enable/010; type=string; label= Enabled Pages: Comma-separated list of pages which can have their cache cleared via an HTTP request. *-wildcard enables the clear cache command for all pages.
+enabledPages = 
+
+  # cat=basic/enable/010; type=int; label= Plugin Page: Id of the page where the clear cache command can be executed. 
+pluginPage = 
+
+  # cat=basic/enable/010; type=string; label= API Key: Encryption key used to validate a clear cache request.
+secretKey = 
+
+  # cat=basic/xxx/010; type=boolean; label= Enable Developer Logging: Logs all clear cache requests to the developer's log (requires a devLog extension).
+devLog = 0
+
+TSConstantEditor.basic {
+    header = rtp_clearcacherequest
+    description = <h2 class="typo3-tstemplate-ceditor-subcat">Instructions</h2><p>This extension enables clearing TYPO3 via an HTTP request. The request is only available on a specific page (Plugin Page) and remote addresses which are allowed to execute a clear cache command can be restricted (Allowed Remote IPs). In addition, the pages which can have their cache cleared must be defined (Enabled Pages).</p><p>For example, a request to:<br /><b>www.mysite.com/?id=142&clearPageCache=9,10,15&secretKey=blabla</b><br />will clear the cache of pages 9, 10 & 15 provided the conditions (Plugin Page, Allowed Remote IPs and Enabled Pages as well as the API key) are validated. Note that in the above example, if only page 10 can have it's cache cleared, the request to clear the cache of pages 9 & 15 is ignored while the cache of page 10 is cleared.</p>
+}

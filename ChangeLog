@@ -1,0 +1,14 @@
+2010-07-21 Simon Tuck  <stu@rtpartner.ch>
+
+	* [INFO] Code cleanup
+	* [CHANGED] Minor changes to function names for better readability
+	* [CHANGED] Minor text changes
+	* [FIXED] Typo in extConf instructions
+	* [NEW] Added example script
+	* [CHANGED] Extension uses devLog instead of rtp_debug
+	* [FIXED] cmpIp not being applied when plugin is included through TypoScript
+	* [CHANGED] Made extension "standalone", i.e. could be published to TER
+	
+2010-07-20 Simon Tuck  <stu@rtpartner.ch>
+
+	* initial code generated with kickstarter
